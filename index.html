@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara con Bigote</title>    
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+        }
+        .cara-container {
+            position: relative;
+            width: 800px;
+            height: 700px;
+            margin-top: 50px;
+        }
+        .rostro {
+            width: 660px;
+            height: 650px;
+            top: -20px;
+            left: 85px; 
+            border-radius: 50%; 
+            position: absolute;
+            background-color: orange;
+            z-index: -1; 
+            border: 6px solid #d37a00; 
+        }
+        .mustache {
+            width: 180px;
+            height: 180px;
+            left: 100px;
+            border-radius: 50%;
+            position: absolute;
+            color: black;
+            box-shadow:
+                150px 240px 0 0 currentColor,
+                300px 240px 0 0 currentColor;
+        }
+        .mustache::before {
+            content: "";
+            position: absolute;
+            left: 30px;
+            top: 120px;
+            width: 210px;
+            height: 120px;
+            border-bottom: solid 180px currentColor;
+            border-radius: 0 0 0 100%;
+            transform: rotate(-40deg);
+            transform-origin: right 210px;
+        }       
+        .mustache::after {
+            content: "";
+            position: absolute;
+            left: 390px;
+            top: 120px;
+            width: 210px;
+            height: 120px;
+            border-bottom: solid 180px currentColor;
+            border-radius: 0 0 100% 0;
+            transform: rotate(40deg);
+            transform-origin: left 210px;
+        }
+        .eye {
+            width: 40px; 
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+        }
+        .ceja {
+            width: 80px;
+            height: 25px;
+            background-color: black;
+            position: absolute;
+            border-radius: 12px;
+        }
+        .ceja.izq {
+            left: 295px;
+            top: 55px;
+            transform: rotate(15deg); 
+        }
+        .ceja.der {
+            left: 455px;
+            top: 55px;
+            transform: rotate(-15deg); 
+        }
+    </style>
+</head>
+<body>   
+    <div class="cara-container">
+        <div class="rostro"></div>        
+        <div class="ceja izq"></div>
+        <div class="ceja der"></div>
+        <div class="eye" style="left: 315px; top: 100px;"></div>
+        <div class="eye" style="left: 475px; top: 100px;"></div>
+        <div class="mustache"></div>
+    </div>
+</body>
+</html>
